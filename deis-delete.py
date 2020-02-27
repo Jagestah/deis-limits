@@ -18,21 +18,6 @@ def main():
     else:
         print('help message')
 
-def unset(input):
-    # pp.pprint(input)
-    for app in input:
-        app_name = app["name"]
-        for cpu_limit in app["cpu"]:
-            limit_val = cpu_limit["limit"]
-            process_name = cpu_limit["name"]
-            command_result = check_output((["echo","limits:set","-a",app_name,process_name+'='+limit_val]))
-            print(command_result)
-        # pp.pprint(app_name)
-
-    # cmd_result = check_output((["echo","apps:unset","-a",app_name]))
-    #
-    # print(cmd_result)
-
 def set(input):
     print('do the set thing')
     for app in input:
